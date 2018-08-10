@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.belal.moviesapp.R;
 import com.example.belal.moviesapp.presentation.movies_list.MoviesListFragment;
 
-
 public class DisplayMovieActivity extends AppCompatActivity {
 
     @Override

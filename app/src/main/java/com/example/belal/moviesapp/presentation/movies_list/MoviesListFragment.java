@@ -13,6 +13,9 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import com.example.belal.moviesapp.R;
+import com.example.belal.moviesapp.dagger.DaggerApplication;
+import com.example.belal.moviesapp.data.layer.movie_response.MoviesResponse;
+import com.example.belal.moviesapp.presentation.adapters.MoviesAdapter;
 
 import javax.inject.Inject;
 
