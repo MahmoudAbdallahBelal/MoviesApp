@@ -1,6 +1,8 @@
 package com.example.belal.moviesapp.presentation.movies_list;
 
 
+import android.app.Activity;
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,6 +18,7 @@ import com.example.belal.moviesapp.R;
 import com.example.belal.moviesapp.dagger.DaggerApplication;
 import com.example.belal.moviesapp.data.layer.movie_response.MoviesResponse;
 import com.example.belal.moviesapp.presentation.adapters.MoviesAdapter;
+import com.example.belal.moviesapp.presentation.movies_details.MoviesDetailsFragment;
 
 import javax.inject.Inject;
 
@@ -29,6 +32,8 @@ public class MoviesListFragment extends Fragment  implements  MoviesListView , S
 
 
     private  View mView;
+
+    Communicator communicator;
 
    @BindView(R.id.gridView_movies)
    GridView moviesGridView;
@@ -64,6 +69,18 @@ public class MoviesListFragment extends Fragment  implements  MoviesListView , S
 
     }
 
+    public  interface  Communicator{
+        public void respond(String imageUrl , String title , String overView , String vote , String releaseDate);
+
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        communicator = (Communicator) context;
+    }
+
+
 
     @Override
     public void onAttache() {
@@ -86,7 +103,7 @@ public class MoviesListFragment extends Fragment  implements  MoviesListView , S
     @Override
     public void showMoviesList(MoviesResponse moviesResponse) {
 
-        moviesAdapter = new MoviesAdapter(getActivity() , this, moviesResponse.getResults());
+        moviesAdapter = new MoviesAdapter(getActivity() , this, moviesResponse.getResults(),communicator);
         moviesGridView.setAdapter(moviesAdapter);
 
     }

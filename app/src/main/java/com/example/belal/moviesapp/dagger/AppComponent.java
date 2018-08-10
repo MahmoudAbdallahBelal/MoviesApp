@@ -1,6 +1,8 @@
 package com.example.belal.moviesapp.dagger;
 
 
+import com.example.belal.moviesapp.presentation.movies_details.MoviesDetailsFragment;
+import com.example.belal.moviesapp.presentation.movies_details.MoviesDetailsPresenter;
 import com.example.belal.moviesapp.presentation.movies_list.MoviesListFragment;
 import com.example.belal.moviesapp.presentation.movies_list.MoviesListPresenter;
 
@@ -21,6 +23,9 @@ public interface AppComponent {
 
     //register MainPresenter it will need objects for injection
     void inject(MoviesListPresenter moviesListPresenter);
+
+    void inject(MoviesDetailsFragment moviesDetailsFragment);
+    void inject(MoviesDetailsPresenter moviesDetailsPresenter);
 
 
 }

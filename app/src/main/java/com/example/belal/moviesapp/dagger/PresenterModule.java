@@ -4,6 +4,7 @@ package com.example.belal.moviesapp.dagger;
 import android.content.Context;
 
 
+import com.example.belal.moviesapp.presentation.movies_details.MoviesDetailsPresenter;
 import com.example.belal.moviesapp.presentation.movies_list.MoviesListPresenter;
 
 import javax.inject.Singleton;
@@ -24,6 +25,12 @@ public class PresenterModule {
         return new MoviesListPresenter(context);
     }
 
+
+    @Provides
+    @Singleton
+    MoviesDetailsPresenter provideMovieDetailsPresenter(Context context) {
+        return new MoviesDetailsPresenter(context);
+    }
 
 
 
