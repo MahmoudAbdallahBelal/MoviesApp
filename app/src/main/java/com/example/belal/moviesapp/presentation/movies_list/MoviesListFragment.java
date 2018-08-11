@@ -91,12 +91,12 @@ public class MoviesListFragment extends Fragment  implements  MoviesListView , S
     @Override
     public void showSuccessMessage(String message) {
 
-        Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+        Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void showErrorMessage(String message) {
-        Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+        Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
 
     }
 

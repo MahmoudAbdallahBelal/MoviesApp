@@ -1,6 +1,7 @@
 package com.example.belal.moviesapp.presentation;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
@@ -14,6 +15,7 @@ public class DisplayMovieActivity extends AppCompatActivity  implements MoviesLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_movie);
+
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction().add(R.id.constrain_container, new MoviesListFragment());
         ft.commit();

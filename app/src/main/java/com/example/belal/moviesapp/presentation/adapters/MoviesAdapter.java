@@ -113,6 +113,7 @@ public class MoviesAdapter extends BaseAdapter {
                         resultDetailsObjectList.get(position).getTitle(),resultDetailsObjectList.get(position).getOverview()
                 ,resultDetailsObjectList.get(position).getVote_average() , resultDetailsObjectList.get(position).getRelease_date());
 
+
             }
         });
 

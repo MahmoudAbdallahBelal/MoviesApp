@@ -30,6 +30,8 @@ public class MoviesDetailsFragment extends Fragment implements MoviesDetailsView
 
    private  View mView ;
 
+
+
    @BindView(R.id.textView_movie_title)
     TextView movieTitleTxt;
 

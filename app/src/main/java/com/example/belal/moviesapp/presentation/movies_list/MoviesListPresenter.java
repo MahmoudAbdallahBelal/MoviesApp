@@ -59,14 +59,14 @@ public class MoviesListPresenter implements MoviesListView.MoviesPresenter{
                     @Override
                     public final void onCompleted() {
 
-                        mView.showSuccessMessage("Success");
+                       // mView.showSuccessMessage("Success");
                     }
 
                     @Override
                     public final void onError(Throwable e) {
 
 
-                        mView.showErrorMessage(e.getMessage());
+                        //mView.showErrorMessage(""+e.getMessage());
                     }
 
                     @Override
