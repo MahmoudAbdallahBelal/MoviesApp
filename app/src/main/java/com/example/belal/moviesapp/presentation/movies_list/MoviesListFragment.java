@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.belal.moviesapp.R;
@@ -45,6 +46,9 @@ public class MoviesListFragment extends Fragment  implements  MoviesListView , S
     MoviesListPresenter moviesPresenter;
 
     private MoviesAdapter moviesAdapter;
+
+    @BindView(R.id.progressbar_movie_loading)
+    ProgressBar movieProgress;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -98,6 +102,17 @@ public class MoviesListFragment extends Fragment  implements  MoviesListView , S
     public void showErrorMessage(String message) {
         Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
 
+    }
+
+    @Override
+    public void showLoading() {
+        movieProgress.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideLoading() {
+
+        movieProgress.setVisibility(View.GONE);
     }
 
     @Override

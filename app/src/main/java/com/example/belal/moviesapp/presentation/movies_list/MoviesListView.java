@@ -12,6 +12,8 @@ public interface MoviesListView extends BaseView {
 
     void  showSuccessMessage(String message);
     void  showErrorMessage(String message);
+    void  showLoading();
+    void hideLoading();
     void  showMoviesList(MoviesResponse moviesResponse);
 
 

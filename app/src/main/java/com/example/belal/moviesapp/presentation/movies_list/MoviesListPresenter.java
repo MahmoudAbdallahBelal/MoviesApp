@@ -52,6 +52,7 @@ public class MoviesListPresenter implements MoviesListView.MoviesPresenter{
     public void returnMoviesList() {
 
 
+        mView.showLoading();
         mApiInterface.getAllMoviesObservable(EndPoints.API_KEY , EndPoints.LANGUAGE , EndPoints.PAGE)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -59,7 +60,7 @@ public class MoviesListPresenter implements MoviesListView.MoviesPresenter{
                     @Override
                     public final void onCompleted() {
 
-                       // mView.showSuccessMessage("Success");
+                        mView.hideLoading();
                     }
 
                     @Override

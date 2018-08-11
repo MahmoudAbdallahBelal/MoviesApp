@@ -70,8 +70,7 @@ public class MoviesAdapter extends BaseAdapter {
         @BindView(R.id.imageView_movie)
         ImageView movieImage;
 
-        @BindView(R.id.progressbar_movie_loading)
-        ProgressBar movieProgress;
+
 
         Holder(View view){
             ButterKnife.bind(this , view);
@@ -91,17 +90,7 @@ public class MoviesAdapter extends BaseAdapter {
 
         Picasso.with(context).
                 load(EndPoints.MOVIES_IMAGES_BASE_URL + resultDetailsObjectList.get(position).getPoster_path())
-                .into(holder.movieImage, new Callback() {
-                    @Override
-                    public void onSuccess() {
-                        holder.movieProgress.setVisibility(View.INVISIBLE);
-                    }
-
-                    @Override
-                    public void onError() {
-                        holder.movieProgress.setVisibility(View.INVISIBLE);
-                    }
-                });
+                .into(holder.movieImage);
 
 
         holder.movieImage.setOnClickListener(new View.OnClickListener() {
